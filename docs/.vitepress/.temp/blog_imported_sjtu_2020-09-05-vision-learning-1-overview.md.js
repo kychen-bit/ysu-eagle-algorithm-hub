@@ -1,0 +1,19 @@
+import { ssrRenderAttrs } from "vue/server-renderer";
+import { useSSRContext } from "vue";
+import { _ as _export_sfc } from "./plugin-vue_export-helper.1tPrXgE0.js";
+const __pageData = JSON.parse('{"title":"视觉教程第一弹：视觉综述","description":"","frontmatter":{"layout":"post","title":"视觉教程第一弹：视觉综述","categories":["vision","course"],"source_type":"repost","source_project":"SJTU RoboMaster Team Blog","source_url":"https://github.com/SJTU-RoboMaster-Team/SJTU-RoboMaster-Team.github.io/blob/master/_posts/2020-09-05-vision-learning-1-overview.md","license":"MIT"},"headers":[],"relativePath":"blog/imported/sjtu/2020-09-05-vision-learning-1-overview.md","filePath":"blog/imported/sjtu/2020-09-05-vision-learning-1-overview.md","lastUpdated":null}');
+const _sfc_main = { name: "blog/imported/sjtu/2020-09-05-vision-learning-1-overview.md" };
+function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  _push(`<div${ssrRenderAttrs(_attrs)}><h1 id="视觉教程第一弹-视觉综述" tabindex="-1">视觉教程第一弹：视觉综述 <a class="header-anchor" href="#视觉教程第一弹-视觉综述" aria-label="Permalink to &quot;视觉教程第一弹：视觉综述&quot;">​</a></h1><blockquote><p>机械是血肉，电控是大脑，视觉是灵魂。</p></blockquote><p>在RoboMaster的比赛中，视觉主要发挥的作用有一下几点：</p><ul><li>识别敌方装甲板，自动控制子弹准确命中。</li><li>识别场地BUFF，自动控制子弹准确命中。</li><li>识别基地引导灯，自动控制飞镖飞行姿态，准确命中基地。（20赛季新加入的元素：飞镖）</li><li>识别敌方飞镖，自动击落敌方飞镖，难度较大。（20赛季新加入的元素：飞镖）</li></ul><p>以上几点都是<strong>射击控制类的应用</strong>，类似FPS游戏中的锁头挂。</p><ul><li>识别弹药箱，自动控制工程车取得弹丸。</li><li>识别敌方车辆位置，为队伍提供上帝视角。（20赛季新加入的元素：雷达站）</li><li>在车辆后方安装摄像头，识别背后的敌方单位，防止操作手被偷屁股。（类似的，还可在侧面装摄像头）</li></ul><p>以上几点则是<strong>辅助类的应用</strong>。</p><hr><p>由于视觉是一个偏向软件的方向，这意味着只要有一台电脑，几乎可以完成视觉相关的绝大多数任务；同时视觉每年需求变化不大，网上开源资料多，所以，<strong>绝大多数队伍都做出一个能用的视觉</strong>，这并不是一个十分困难的任务。</p><p>因此，我们做视觉的目标<strong>绝不仅仅是能用</strong>，而是<strong>能在较为复杂环境下，快速而稳定的识别目标，同时准确命中</strong>。一定要取得比手动操作更为优秀的效果才是合格的视觉应用。</p><p>这里就提到了几个关键点：</p><ul><li>代码鲁棒性好。</li><li>运算速度快。</li><li>识别效果转化为控制效果。</li></ul><p>有的人可能不清楚，什么叫识别效果转化为控制效果？以射击类的应用为例，<strong>识别到后，要能够准确命中</strong>。</p><p>说到这里，就不得不说到，<strong>视觉识别的结果是如何转化为子弹命中</strong>的。一般情况下，我们的数据流是这样的：</p><blockquote><p>摄像头采集图像---&gt;视觉算法识别---&gt;串口发送数据到单片机控制板---&gt;单片机控制相应电机---&gt;弹仓拨盘转动带动子弹射出---&gt;子弹在空中飞行---&gt;命中目标</p></blockquote><p>可以看到，从数据产生到命中，中间经历了很多个环节，这导致了大量的延迟。如果敌方处于运动状态，无法命中基本是可想而知的。</p><p>还有的人可能觉得，控制已经不是视觉的范畴了，这些事情应该有其他人（如电控）来完成。但实际情况下，整个车辆是一个大系统，没有哪个模块能单独存在，只有统一在一起进行测试和调参，才能取得良好效果。这意味着控制类的事情往往都是和视觉脱离不开的，所以<strong>视觉部并不仅仅做视觉识别，也可以叫做算法部</strong>。</p><hr><p>说了这么多，那想做好视觉都可能需要哪些知识呢？这里我把我认为的各类必须和非必须知识罗列一下：</p><blockquote><ul><li>编程语言：C++（必须）、Python（非必须）</li><li>编程能力or技巧：多线程（必须）、C++进阶（非必须）、可视化（非必须）</li><li>各类编程库： <ul><li>OpenCV（必须）</li><li>Eigen（矩阵运算库，非必须，但推荐掌握）</li><li>Boost（C++扩展库，非必须）</li><li>QT（C++GUI库，同时集成各类常用功能，非必须）</li><li>Pytorch/TensorFlow/Caffe/Keras（深度学习训练，非必须。如果想用，推荐使用Pytorch，极其不推荐TensorFlow）</li><li>TensorRT/TVM/OpenVINO（深度学习部署，非必须。如果想用，N卡推荐TensorRT）</li><li>ROS/ROS2（分布式环境，非必须，不太推荐使用在RoboMaster的视觉应用中。如果想用，推荐ROS2）</li></ul></li><li>嵌入式开发（非必须）</li><li>Linux基本使用，如：命令行、包管理、自启动（必须，建议使用Ubuntu18.04）</li><li>CMake基本使用（非必须，但推荐掌握）</li><li>git和github基本使用（非必须，但推荐掌握）</li><li>相机硬件相关知识，如：选型，图像采集方式，各种性能参数（必须）</li><li>相机软件相关知识，如：成像模型，调参方式（必须）</li><li>坐标变换（非必须，但推荐掌握）</li><li>陀螺仪（非必须，但推荐掌握）</li><li>各类滤波算法或优化算法（非必须，但推荐掌握）</li></ul></blockquote><hr><p>作者：唐欣阳，github主页：<a href="https://github.com/xinyang-go" target="_blank" rel="noreferrer">传送门</a>。</p></div>`);
+}
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("blog/imported/sjtu/2020-09-05-vision-learning-1-overview.md");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+const _20200905VisionLearning1Overview = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
+export {
+  __pageData,
+  _20200905VisionLearning1Overview as default
+};
