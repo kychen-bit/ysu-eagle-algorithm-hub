@@ -1,7 +1,7 @@
 ---
-layout: home
+layout: false
 title: 燕鹰算法知识库
-description: 汇聚 RoboMaster 算法资料，连接学习、实践与传承
+description: 燕山大学 RoboMaster 燕鹰战队算法知识库
 ---
 
 <HomePage />

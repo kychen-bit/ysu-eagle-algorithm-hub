@@ -40,6 +40,36 @@
 html { scroll-behavior: smooth; }
 body { letter-spacing: 0; }
 
+.entry-home {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: clamp(24px, 5vw, 72px);
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.entry-home__logo {
+  display: block;
+  width: min(72vw, 660px);
+  line-height: 0;
+}
+
+.entry-home__logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+}
+
+.entry-home__logo:focus-visible {
+  outline: 2px solid #07345d;
+  outline-offset: 12px;
+}
+
 .VPNav { border-bottom: 1px solid var(--vp-c-divider); }
 .VPNavBarTitle .logo { width: 40px; height: 40px; object-fit: cover; border-radius: 2px; }
 .VPNavBarTitle .title { font-family: var(--eagle-serif); font-weight: 900; letter-spacing: -0.04em; }

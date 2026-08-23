@@ -8,6 +8,14 @@ const base = process.env.GITHUB_ACTIONS === 'true' && repositoryName && !reposit
 
 const qdRoot = 'knowledge/imported/qd/'
 const sjtuRoot = 'blog/imported/sjtu/'
+const qdLearningSourceByPath: Record<string, string> = {
+  'learning-path/index.md': 'README.md',
+  'learning-path/stage-0.md': 'Learning_path_0.md',
+  'learning-path/stage-1.md': 'Learning_path_1.md',
+  'learning-path/stage-2.md': 'Learning_path_2.md',
+  'learning-path/stage-3.md': 'Learning_path_3.md',
+  'learning-path/stage-4.md': 'Learning_path_4.md'
+}
 
 export default defineConfig({
   lang: 'zh-CN',
@@ -46,14 +54,11 @@ export default defineConfig({
     sidebar: {
       '/learning-path/': [
         { text: '学习路线', items: [
-          { text: '路线总览', link: '/learning-path/' },
-          { text: '0 · 准备与环境', link: '/learning-path/stage-0' },
-          { text: '1 · Linux、Git 与 C++', link: '/learning-path/stage-1' },
-          { text: '2 · OpenCV 与相机', link: '/learning-path/stage-2' },
-          { text: '3 · 装甲板识别', link: '/learning-path/stage-3' },
-          { text: '4 · PnP 与坐标系', link: '/learning-path/stage-4' },
-          { text: '5 · 预测与通信', link: '/learning-path/stage-5' },
-          { text: '6 · 部署与维护', link: '/learning-path/stage-6' }
+          { text: '学习路线总览', link: '/learning-path/stage-0' },
+          { text: '算法组第一阶段学习路线', link: '/learning-path/stage-1' },
+          { text: '算法组第二阶段学习路线', link: '/learning-path/stage-2' },
+          { text: '算法组第三阶段学习路线', link: '/learning-path/stage-3' },
+          { text: '算法组第四阶段学习路线', link: '/learning-path/stage-4' }
         ]}
       ],
       '/knowledge/': [
@@ -132,6 +137,14 @@ export default defineConfig({
   },
   transformPageData(pageData) {
     const path = pageData.relativePath.replace(/\\/g, '/')
+    const qdLearningSource = qdLearningSourceByPath[path]
+
+    if (qdLearningSource) {
+      pageData.frontmatter.source_type = 'repost'
+      pageData.frontmatter.source_project = 'QD Algorithm Library'
+      pageData.frontmatter.source_url = `https://github.com/NOMANE-0/QD_Algorithm_Library/blob/main/docs/LearningPath/${qdLearningSource}`
+      pageData.frontmatter.license = 'Apache-2.0'
+    }
 
     if (path.startsWith(qdRoot)) {
       const upstream = path.slice(qdRoot.length)

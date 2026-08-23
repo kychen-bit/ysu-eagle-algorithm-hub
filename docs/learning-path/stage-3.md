@@ -1,27 +1,59 @@
+# 第三阶段学习路线
+
+重点学习 ROS2，然后分流进视觉组和导航组
+
+## ROS2(机器⼈操作系统)
+
+学习资料：[ROS2理论与实践](https://www.bilibili.com/video/BV1VB4y137ys)及其[课件](https://gitee.com/slime0rimiru0/ROS2_Tuition)
+
+学习要求：
+- 学习课程里的c++内容
+- 了解ros的通信形式，能够自己编写节点
+- 能看懂urdf、launch启动文件并仿写就行
+- 会使用基本的 ros CLI进行调试
+- rviz2 的使用
+
+## c++11新特性
+
+学习资料：[bilibli视频](https://www.bilibili.com/video/BV1bX4y1G7ks)[c++11实用特性](https://www.bilibili.com/video/BV1bX4y1G7ks)、[文字版c++11实用特性](https://subingwen.cn/cplusplus/)
+
+学习要求：学习ROS2会用到部分c++11新特性，遇到了来学相应部分
+视频和文字版是同一作者，看个人喜好看视频还是文字
+
+## 理论学习
+
+### 线性代数
+
+学习资料：[【官方双语/合集】线性代数的本质-系列合集](https://www.bilibili.com/video/BV1ys411472E/)、[【完整版-麻省理工-线性代数】全34讲+配套教材（想学得深入的可以看这个）](https://www.bilibili.com/video/BV1ix411f7Yp)
+
+学习要求：理解线性代数的本质，理解线性代数在空间变换、坐标变换上的应用
+
 ---
-title: 阶段 3：装甲板识别
-description: 从图像预处理走到目标角点与类别输出
-updated: 2026-08-16
----
 
-# 阶段 3：装甲板识别
+## 视觉组
 
-## 目标
+两个学习方向代表了两个方向，图像识别获得信息和处理这些信息
 
-理解传统视觉和学习型检测的角色，构建可观察、可调试的装甲板识别流水线。
+**卡尔曼滤波器（滤波算法）**
 
-## 必读
+学习资料：[从放弃到精通！卡尔曼滤波从理论到实践~](https://www.bilibili.com/video/BV1Rh41117MT)
 
-- [RoboMaster 视觉综述](/blog/imported/sjtu/2020-09-05-vision-learning-1-overview)
-- [装甲板调参经验](/blog/imported/sjtu/2023-05-16-rm-cv-std-how-to-adjust-parameters)
-- [深度学习专题](/knowledge/deep-learning)
+卡尔曼滤波器（EK）是基于当前预测未来状态的算法，学完后可以去了解下扩展卡尔曼滤波器（EKF）
 
-## 实践任务
+**神经网络（深度学习）- Pytorch（深度学习框架）**
 
-在给定视频上输出灯条、候选装甲板、四角点和类别；保留中间二值图、候选筛选数量和耗时统计。
+基本编成语言：python
 
-## 完成标准
+学习资料：[黑马程序员python教程](https://www.bilibili.com/video/BV1qW4y1a7fU)
 
-程序能离线处理测试视频，输出可视化结果与失败样例；文档说明每个阈值影响哪一步。
+学习资料：[《PyTorch深度学习实践》完结合集](https://www.bilibili.com/video/BV1Y7411d7Ys)、[1.1Faster RCNN理论合集](https://www.bilibili.com/video/BV1af4y1m7iL)
 
-下一阶段：[PnP 与坐标系](/learning-path/stage-4)。
+深度学习神经网络方面，可以看[这个视频入门](https://www.bilibili.com/video/BV1Y7411d7Ys)，看完可以自己设计一个简单的神经网络去实现图像分类。不建议新手去看太多书或者高校课程的理论知识。视觉方面建议大家学习路线先是了解深度学习的核心思想，理论，然后接触最简单的图像分类，然后是目标检测，再是其他任务的神经网络，比如关键点检测，图像分割等等。看入门课程再看这个来了解怎么用神经网络去实现目标检测。[这个](https://www.bilibili.com/video/BV1af4y1m7iL)是很经典的几个目标检测神经网络，也算是目标检测神经网络的鼻祖，放到现在效果肯定是达不到要求，但是现在很多网络的核心思想依然是和它一样的。之后再去了解热门且应用最广的yolo系列
+
+## 导航组
+
+**鱼香ros2**(导航)
+
+学习资料：[【鱼香ROS】动手学ROS2|ROS2基础入门到实践教程|小鱼带你手把手学习ROS2](https://www.bilibili.com/video/BV1gr4y1Q7j5/)
+
+学习要求：在学完ROS2后来学习鱼香ROS里的导航部分，从第六章仿真开始学

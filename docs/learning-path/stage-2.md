@@ -1,28 +1,27 @@
----
-title: 阶段 2：OpenCV 与相机
-description: 建立图像处理、相机模型和标定基础
-updated: 2026-08-16
----
+# 第二阶段学习路线
 
-# 阶段 2：OpenCV 与相机
+## OpenCV(计算机视觉/机器视觉/传统视觉)
 
-## 目标
+学习资料：[4h上手C++版Opencv](https://www.bilibili.com/video/BV11A411T7rL)、OpenCV4快速入门（书籍）
 
-能够稳定读取图片、视频和工业相机数据，理解像素、颜色空间、曝光和相机内参。
+学习要求：学习图像色彩空间变换、图像的裁剪、滤波、形态学操作，最终要能学会颜色识别和轮廓检测
 
-## 必读
+主要学习视频内容，书籍可以辅助理解
 
-- [视觉与相机专题](/knowledge/vision-camera)
-- [OpenCV 配置](/knowledge/imported/qd/environment_configuration/OpenCV)
-- [相机标定](/knowledge/imported/qd/Project_Tutorial/camera_calibration)
-- [相机模型与标定课程](/blog/imported/sjtu/2021-10-10-vision-learning-2)
+## 相机模型
 
-## 实践任务
+学习资料：[计算机视觉之三维重建](https://www.bilibili.com/video/BV1mT4y1o7Q2)
 
-完成相机采集程序，显示实时帧率与分辨率；保存标定图并计算内参；使用重投影误差评价结果。
+学习要求：过一遍前3P即可，有个基本的概念，建议学了线性代数再来看
 
-## 完成标准
+## PNP算法
 
-在固定设备上连续采集 10 分钟无崩溃，标定结果和使用的图像完整归档。
+学习资料：[视觉组第六次培训：装甲板位姿解算](https://www.bilibili.com/video/BV1dw411B7Bz)
 
-下一阶段：[装甲板识别](/learning-path/stage-3)。
+学习要求：学会 `cv::solvepnp` 函数的使用
+
+## 线性代数
+
+学习资料：[【官方双语/合集】线性代数的本质 - 系列合集](https://www.bilibili.com/video/BV1ys411472E/)、[【完整版-麻省理工-线性代数】全34讲+配套教材（想学得深入的可以看这个）](https://www.bilibili.com/video/BV1ix411f7Yp)
+
+学习要求：理解线性代数的本质，理解线性代数在空间变换、坐标变换上的应用

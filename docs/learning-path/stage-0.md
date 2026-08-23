@@ -1,30 +1,60 @@
----
-title: 阶段 0：准备与开发环境
-description: 建立可复现的 Linux 开发环境和基本问题排查习惯
-updated: 2026-08-16
----
+# 学习路线
 
-# 阶段 0：准备与开发环境
+[培训资料汇总](https://gitee.com/slime0rimiru0/2026-rm_training)
 
-## 目标
+[OpenCV培训资料](https://gitee.com/slime0rimiru0/opencv_education)
 
-安装 Linux 开发环境，掌握终端、目录、软件源和基础网络排查，能够把自己的环境信息说清楚。
+## 大一上（第一阶段）
 
-## 必读
+ [算法组第一阶段学习路线.pdf](算法组第一阶段学习路线.pdf)
 
-- [Ubuntu 入门](/knowledge/imported/qd/Introduction_to_Linux/hello_ubuntu)
-- [Linux 基本命令](/knowledge/imported/qd/Introduction_to_Linux/Basic_commands)
-- [开发环境专题](/knowledge/environment)
+- 导论
+- Ubuntu与CMake
+- C++（四讲）
+- Git和markdown
 
-## 实践任务
+进行一次C++考核，使用git提交到gitee，考查规范
 
-1. 安装受支持的 Ubuntu LTS 或组内指定环境。
-2. 使用终端完成目录创建、文件操作、权限检查和软件安装。
-3. 记录系统版本、内核、显卡、网络和磁盘信息。
-4. 新建一份 `environment-report.md`，写清环境与安装过程。
+## 寒假（第二阶段）
 
-## 完成标准
+ [算法组第二阶段学习路线.pdf](算法组第二阶段学习路线.pdf)
 
-在不依赖图形化文件管理器的情况下完成基础文件操作，并能提供一份其他队员看得懂的环境报告。
+- 视觉组 —— OpenCV、PNP
+- 导航组 —— ROS2（赵虚左）、C++11
 
-下一阶段：[Linux、Git 与 C++](/learning-path/stage-1)。
+对视觉组进行考核，opencv装甲板识别+仿射变换+PNP。对人员初步筛选，有能者在大一下有比赛的会带上
+
+## 大一下（第三阶段）
+
+ [算法组第三阶段学习路线.pdf](算法组第三阶段学习路线.pdf)
+
+- 视觉组——ROS2（赵虚左）、相机模型、神经网络
+- 导航组——鱼香ROS
+
+放网课，不开设线下课，主要在群里提供答疑
+
+考虑在联盟赛前进行一次小测试，有能者带去调车打RM
+
+## 暑假（正式队员）
+
+对视觉组考核ros2和pnp，解算装甲板三维坐标，算yaw、pitch发布话题，实车检验
+
+```gantt
+ title 时间线
+    dateFormat  YYYY-MM
+    section 比赛时间
+    水赛: 2025-10,30d
+    联盟赛考核:  2026-1,30d
+    对抗赛考核:  2026-3, 30d
+    联盟赛:      2026-3, 30d
+    对抗赛区域赛: 2026-5,30d
+    电赛:   2026-7,30d
+    对抗赛国赛: 2026-8,30d
+    section 学期
+    上学期: 2025-9,120d
+    寒假:   2026-1,60d
+    下学期: 2026-3,120d
+    暑假: 2026-7,60d
+```
+
+![alt text](images/Learning_path_0-image.png)
