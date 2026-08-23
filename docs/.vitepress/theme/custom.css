@@ -141,6 +141,12 @@ body.ysu-home-page:not(.ysu-home-entered) .VPNav {
 .hero-manual__index { position: absolute; inset: auto 42px 38px 42px; display: flex; justify-content: space-between; color: white; font-size: 11px; letter-spacing: .12em; }
 
 .home-section { max-width: 1440px; margin: 0 auto; padding: clamp(80px, 10vw, 150px) clamp(28px, 6vw, 90px); }
+.simple-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 54px; }
+.simple-section-heading > div { display: flex; align-items: baseline; gap: 18px; }
+.simple-section-heading span { color: var(--vp-c-brand-1); font: 800 13px var(--vp-font-family-mono); }
+.simple-section-heading h2 { margin: 0; font: 900 clamp(2.8rem, 5vw, 5.4rem)/1 var(--eagle-serif); letter-spacing: -.06em; }
+.simple-section-heading > a { color: var(--vp-c-text-1); font-weight: 700; text-decoration: underline; text-underline-offset: 6px; }
+.simple-section-heading > a:hover { color: var(--vp-c-brand-1); }
 .section-heading { display: grid; grid-template-columns: 190px 1fr auto; align-items: end; gap: 30px; margin-bottom: 72px; }
 .section-heading > div, .contribution-strip > div { display: flex; align-items: baseline; gap: 12px; }
 .section-heading > div span, .contribution-strip > div span { color: var(--vp-c-brand-1); font-weight: 800; }
@@ -176,6 +182,9 @@ body.ysu-home-page:not(.ysu-home-entered) .VPNav {
 .contribution-strip { display: grid; grid-template-columns: 170px 1.2fr 1fr auto; gap: 45px; align-items: center; }
 .contribution-strip h2 { font-size: clamp(2rem, 3.2vw, 3.6rem); }
 .contribution-strip > p { color: var(--vp-c-text-2); line-height: 1.8; }
+.contribution-strip--simple { max-width: none; grid-template-columns: minmax(220px, .65fr) 1fr auto; padding-left: max(28px, calc((100vw - 1260px) / 2)); padding-right: max(28px, calc((100vw - 1260px) / 2)); background: var(--vp-c-bg-alt); border-top: 1px solid var(--vp-c-divider); }
+.contribution-strip--simple > div { align-items: baseline; }
+.contribution-strip--simple > div h2 { margin: 0; font-family: var(--eagle-serif); letter-spacing: -.045em; }
 
 @media (max-width: 960px) {
   .hero-manual { grid-template-columns: 1fr; }
@@ -187,6 +196,8 @@ body.ysu-home-page:not(.ysu-home-entered) .VPNav {
   .dispatch-section { grid-template-columns: 1fr; }
   .dispatch-section > .button-quiet { grid-column: auto; }
   .contribution-strip { grid-template-columns: 1fr 1fr; }
+  .contribution-strip--simple { grid-template-columns: 1fr auto; }
+  .contribution-strip--simple > p { grid-column: 1 / 2; }
 }
 
 @media (max-width: 640px) {
@@ -219,6 +230,7 @@ body.ysu-home-page:not(.ysu-home-entered) .VPNav {
   }
   .hero-manual__mark { min-height: 340px; padding: 38px; }
   .section-heading { grid-template-columns: 1fr; margin-bottom: 44px; }
+  .simple-section-heading { align-items: flex-start; flex-direction: column; margin-bottom: 40px; }
   .section-heading > a { grid-column: auto; }
   .stage-row { grid-template-columns: 44px 1fr 22px; }
   .stage-row p { grid-column: 2 / 4; }
@@ -228,6 +240,8 @@ body.ysu-home-page:not(.ysu-home-entered) .VPNav {
   .dispatch-list a { grid-template-columns: 1fr auto; }
   .dispatch-list strong { grid-column: 1 / 3; grid-row: 1; }
   .contribution-strip { grid-template-columns: 1fr; }
+  .contribution-strip--simple { grid-template-columns: 1fr; }
+  .contribution-strip--simple > p { grid-column: auto; }
   .vp-doc table { display: block; }
 }
 
