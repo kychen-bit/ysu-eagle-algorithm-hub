@@ -40,34 +40,61 @@
 html { scroll-behavior: smooth; }
 body { letter-spacing: 0; }
 
-.entry-home {
+.entry-splash {
   min-height: 100vh;
   min-height: 100dvh;
   display: grid;
   place-items: center;
   margin: 0;
-  padding: clamp(24px, 5vw, 72px);
+  padding: 0;
   box-sizing: border-box;
   background: #fff;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
-.entry-home__logo {
+.entry-splash__logo {
   display: block;
-  width: min(72vw, 660px);
+  width: min(88vw, 88vh, 960px);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  cursor: pointer;
   line-height: 0;
 }
 
-.entry-home__logo img {
+.entry-splash__logo img {
   display: block;
   width: 100%;
   height: auto;
-  border: 0;
+  border: 0 !important;
   border-radius: 0;
 }
 
-.entry-home__logo:focus-visible {
+.entry-splash__logo:focus-visible {
   outline: 2px solid #07345d;
   outline-offset: 12px;
+}
+
+.home-content {
+  scroll-margin-top: 0;
+  scroll-snap-align: start;
+}
+
+body.ysu-home-page .VPContent {
+  padding-top: 0 !important;
+}
+
+body.ysu-home-page .VPNav {
+  transition: transform .35s ease, opacity .25s ease;
+}
+
+body.ysu-home-page:not(.ysu-home-entered) .VPNav {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .VPNav { border-bottom: 1px solid var(--vp-c-divider); }

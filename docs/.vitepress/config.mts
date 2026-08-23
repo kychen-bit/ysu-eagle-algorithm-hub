@@ -10,7 +10,6 @@ const qdRoot = 'knowledge/imported/qd/'
 const sjtuRoot = 'blog/imported/sjtu/'
 const qdLearningSourceByPath: Record<string, string> = {
   'learning-path/index.md': 'README.md',
-  'learning-path/stage-0.md': 'Learning_path_0.md',
   'learning-path/stage-1.md': 'Learning_path_1.md',
   'learning-path/stage-2.md': 'Learning_path_2.md',
   'learning-path/stage-3.md': 'Learning_path_3.md',
@@ -54,7 +53,6 @@ export default defineConfig({
     sidebar: {
       '/learning-path/': [
         { text: '学习路线', items: [
-          { text: '学习路线总览', link: '/learning-path/stage-0' },
           { text: '算法组第一阶段学习路线', link: '/learning-path/stage-1' },
           { text: '算法组第二阶段学习路线', link: '/learning-path/stage-2' },
           { text: '算法组第三阶段学习路线', link: '/learning-path/stage-3' },
@@ -124,11 +122,11 @@ export default defineConfig({
     docFooter: { prev: '上一篇', next: '下一篇' },
     lastUpdated: { text: '最后更新' },
     editLink: {
-      pattern: 'https://github.com/YSU-Eagle/ysu-eagle-algorithm-hub/edit/main/docs/:path',
+      pattern: 'https://github.com/kychen-bit/ysu-eagle-algorithm-hub/edit/main/docs/:path',
       text: '编辑此页'
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/YSU-Eagle' }
+      { icon: 'github', link: 'https://github.com/kychen-bit/ysu-eagle-algorithm-hub' }
     ],
     footer: {
       message: '公开资料仅供学习交流；转载内容版权归原作者所有。',
